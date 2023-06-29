@@ -1,0 +1,25 @@
+# Optional npm cache directory
+.npm
+
+# Optional eslint cache
+.eslint
+
+# Optional REPL history
+.node_repl_history
+
+# Output of 'npm pack'
+*.tgz
+
+# Yarn integrity file
+.yarn-integrity
+
+# dotenv variable file
+.env
+
+# VSCode working files
+.vscode/*
+!.vscode/settings.json
+!.vscode/tasks.json
+!.vscode/launch.json
+!.vscode/extensions.json
+*.code-workspace
