@@ -1,6 +1,6 @@
 const express = require('express');
 const router = express.Router();
-const ctrlMain = require('../contollers/main');
+const ctrlMain = require('../controllers/main');
 
 /* GET home page route. */
 router.get('/', ctrlMain.index);

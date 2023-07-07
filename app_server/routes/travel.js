@@ -1,6 +1,6 @@
 const express = require('express');
 const router = express.Router();
-const controller = require('../contollers/travel');
+const controller = require('../controllers/travel');
 
 /* GET travel page route. */
 router.get('/', controller.travel);
