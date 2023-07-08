@@ -2,7 +2,7 @@ const express = require('express');
 const router = express.Router();
 const controller = require('../controllers/rooms');
 
-/* GET index page route. */
+/* GET rooms page route. */
 router.get('/', controller.rooms);
 
 module.exports = router;
