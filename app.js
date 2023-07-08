@@ -1,3 +1,33 @@
+/* MVC Architecture: 
+* Model, View, Controller - A web server architecture that splits applications into
+* different sections which all have their own purpose. 
+* 
+* Controller - Acts as a middleman between Model and Veiw. When the controller recieves 
+* a request (usually from the user), it asks the Model for information based on the 
+* request. The controller does not deal with any data logic, it handles user requests, 
+* and what do do on failure or success.
+* 
+* Model - Responsible for handling all of the data logic of the request. The model will
+* interact with the database and is responsible for all of the validation, saving,
+* udating, deleting, etc. of the data. The model never worries about handling user
+* requests, that is the Controller's job.
+*
+* View - The view is responsible for presenting information. It is a template file that
+* renders html based on the data the controller sends it. The view sends it's
+* presentation to the controller, and the controller sends that back to the user so
+* that they can view it.
+
+          model       view
+          ^  \        ^ l
+           \  \      | l 
+            \  \    | l
+             \  v  | V
+    user ---> controller
+         <--- 
+
+* In this design, the Model and View never interact with one another directly, only
+* through the controller. 
+*/
 const createError = require('http-errors');
 const express = require('express');
 const path = require('path');
