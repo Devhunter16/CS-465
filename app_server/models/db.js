@@ -1,5 +1,6 @@
 // Importing mongoose, an ODM (object data modeling) library for MongoDB and Node.js
 const mongoose = require('mongoose');
+// If the environment variable DB_HOST is not set, use default value 127.0.0.1 (localhost)
 const host = process.env.DB_HOST || '127.0.0.1'
 const dbURI = `mongodb://${host}/travlr`;
 
