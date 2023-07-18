@@ -13,11 +13,9 @@
 				<div class="box">
 					<div class="body">
 						<h1>Travel</h1>
-						<ul id="sites">
-							<!-- {{"#each trips" iterates over the trips array (a json array)}} -->
+						<ul id="sites">			
 							{{#each trips}}
 								<li>
-									<!-- "this" refers to the JSON we passed in using our travel controller. It has "image", "name", and "description" properties -->
 									<a href="/travel"><img src="images/{{this.image}}" alt="Img"></a>
 									<h2><a href="/travel">{{this.name}}</a></h2>
 									{{{this.description}}}

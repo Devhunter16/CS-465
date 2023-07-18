@@ -5,7 +5,7 @@
 * Controller - Acts as a middleman between Model and Veiw. When the controller recieves 
 * a request (usually from the user), it asks the Model for information based on the 
 * request. The controller does not deal with any data logic, it handles user requests, 
-* and what do do on failure or success.
+* and what to do on failure or success.
 * 
 * Model - Responsible for handling all of the data logic of the request. The model will
 * interact with the database and is responsible for all of the validation, saving,

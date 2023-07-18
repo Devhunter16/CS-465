@@ -1,7 +1,7 @@
 // Requiring the built-in Node.js file system so we can retrieve the JSON data in trips.json
 const fileSystem = require('fs');
 
-// Storing our parsed JSON data in the "trips" variable
+// Storing our parsed JSON data in the "trips" variable so that trips is an object
 const trips = JSON.parse(fileSystem.readFileSync('./data/trips.json', 'utf8'));
 
 /* 
