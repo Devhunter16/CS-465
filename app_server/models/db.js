@@ -7,6 +7,8 @@ const dbURI = `mongodb://${host}/travlr`;
 // This avoids deprecation warnings
 mongoose.set('useUnifiedTopology', true);
 
+// This function establishes a connection to the database after a short delay which allows
+// other parts of the app to initialize prior to connecting to the database
 const connect = () => {
     setTimeout(() => mongoose.connect(dbURI, {
         useNewUrlParser: true,
@@ -59,4 +61,5 @@ process.on('SIGTERM', () => {
 // Calling connect()
 connect();
 
+// Importing our travlr.js file
 require('./travlr');
