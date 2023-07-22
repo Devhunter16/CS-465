@@ -18,4 +18,4 @@ const tripSchema = new mongoose.Schema({
 // Our collection in MongDB will be named 'trips', as we defined in the first argument. 
 // The second argument, "tripSchema" is the schema that defines the structure for 
 // documents in the trips collection.
-mongoose.model('trips', tripSchema);
+module.exports = mongoose.model('trips', tripSchema);

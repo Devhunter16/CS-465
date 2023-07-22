@@ -60,6 +60,3 @@ process.on('SIGTERM', () => {
 
 // Calling connect()
 connect();
-
-// Importing our travlr.js file
-require('./travlr');
