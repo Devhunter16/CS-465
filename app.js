@@ -69,6 +69,7 @@ app.use('/meals', mealsRouter);
 app.use('/news', newsRouter);
 app.use('/about', aboutRouter);
 app.use('/contact', contactRouter);
+// When any requests come in for /api, we give them to the api router
 app.use('/api', apiRouter);
 
 // catch 404 and forward to error handler
