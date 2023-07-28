@@ -1,32 +1,13 @@
-/*
 const express = require("express");
 const router = express.Router();
 
-const jwt = require("express-jwt");
-const auth = jwt({
-  secret: process.env.JWT_SECRET,
-  userProperty: "payload",
-  algorithms: ["HS256"],
-});
-
-const authController = require("../controllers/authentication");
+// Importing the functions we defined in the "trips.js" controller file
 const tripsController = require("../controllers/trips");
 
-router.route("/login").post(authController.login);
-
-router.route("/register").post(authController.register);
-
+// When a GET request comes in, we pass it to the trips controller and use the tripsList
+// function we defined in the "trips.js" controller file
 router
   .route("/trips")
   .get(tripsController.tripsList)
-  .post(auth, tripsController.tripsAddTrip);
-
-router
-  .route("/trips/:tripCode")
-  .get(tripsController.tripsList)
-  .put(auth, tripsController.tripsUpdateTrip);
-
-router.route("/trips/:tripCode").get(tripsController.tripsFindCode);
 
 module.exports = router;
-*/
