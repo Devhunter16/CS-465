@@ -6,7 +6,7 @@ const fileSystem = require('fs');
 const mongoose = require('mongoose');
 
 // Importing our travlr.js file
-const trip = require('../../app_api/database/travlr');
+const trip = require('../../app_api/database/models/travlr');
 
 // Storing our parsed JSON data in the "trips" variable so that trips is an object
 const tripsData = JSON.parse(fileSystem.readFileSync('./data/trips.json', 'utf8'));
