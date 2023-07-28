@@ -12,7 +12,7 @@ const dbURI = `mongodb://${host}/travlr`;
 const connect = () => {
     setTimeout(() => mongoose.connect(dbURI, {
         useNewUrlParser: true,
-        useCreateIndex: true
+        // useCreateIndex: true
     }), 1000);
 };
 
@@ -60,3 +60,6 @@ process.on('SIGTERM', () => {
 
 // Calling connect()
 connect();
+
+// Bring in schema
+require("./models/travlr");
