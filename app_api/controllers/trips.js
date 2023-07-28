@@ -47,5 +47,5 @@ const tripsFindCode = async (req, res) => {
 // Exporting our functions
 module.exports = {
     tripsList,
-    tripsFindByCOde
+    tripsFindCode
 };
