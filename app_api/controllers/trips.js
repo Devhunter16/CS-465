@@ -24,7 +24,7 @@ const tripsList = async (req, res) => {
 };
 
 // Async function that gets a trip from the db based on it's code
-const tripsFindByCode = async (req, res) => {
+const tripsFindCode = async (req, res) => {
     Model
         .find({ 'code': req.params.tripCode }) // Finding trip based on it's code
         .exec((err, trip) => {

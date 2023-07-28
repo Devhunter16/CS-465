@@ -5,7 +5,7 @@ const host = process.env.DB_HOST || '127.0.0.1'
 const dbURI = `mongodb://${host}/travlr`;
 
 // This avoids deprecation warnings
-mongoose.set('useUnifiedTopology', true);
+// mongoose.set('useUnifiedTopology', true);
 
 // This function establishes a connection to the database after a short delay which allows
 // other parts of the app to initialize prior to connecting to the database
