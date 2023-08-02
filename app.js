@@ -60,6 +60,17 @@ app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
+// Allowing CORS requests in Express. CORS is a mechanism based on HTTP headers that 
+// specify exceptions to the same-origin policy and allow cross-origin requests under 
+// specific circumstances. A cross-origin request is a website at one origin, such as 
+// https://example.com, accessing a resource on a different origin, such as
+//  https://example.net. This basically allows our SPA to access info from our REST api.
+app.use('/api', (req, res, next) => {
+  res.header('Access-Control-Allow-Origin', 'http://localhost:4200');
+  res.header('Access-Control-Allow-Headers', 'Origin, X-Requested-With, Content-Type, Accept');
+  next();
+});
+
 // Using our routes to render pages.
 app.use('/', indexRouter);
 app.use('/users', usersRouter);
