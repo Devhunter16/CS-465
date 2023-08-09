@@ -34,7 +34,6 @@ export class AddTripComponent implements OnInit {
 
   onSubmit() {
     this.submitted = true;
-    /*
     if(this.addForm.valid) {
       this.tripService.addTrip(this.addForm.value)
         .then( data => {
@@ -42,7 +41,6 @@ export class AddTripComponent implements OnInit {
           this.router.navigate(['']);
         });
     }
-    */
   }
 
   // get the form short name to access the form fields
