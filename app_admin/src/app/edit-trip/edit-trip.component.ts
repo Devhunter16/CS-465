@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { FormBuilder, FormGroup, Validators } from "@angular/forms";
+import { Router } from "@angular/router";
+import { TripDataService } from '../../../services/trip-data.service';
 
 @Component({
   selector: 'app-edit-trip',
@@ -7,9 +10,58 @@ import { Component, OnInit } from '@angular/core';
 })
 export class EditTripComponent implements OnInit {
 
-  constructor() { }
+  editForm: FormGroup;
+  submitted = false;
+
+  constructor(
+    private formBuilder: FormBuilder,
+    private router: Router,
+    private tripService: TripDataService
+  ) { }
 
   ngOnInit() {
+    //retrive stashed tripId
+    let tripCode = localStorage.getItem("tripCode");
+    if (!tripCode) {
+      alert("Something is wrong, couldn't find stashed tripCode!");
+      this.router.navigate(['']);
+      return;
+    }
+
+    console.log("EditTripComponent#onInit found tripCode " + tripCode);
+
+    //initialize form
+    this.editForm = this.formBuilder.group({
+      _id: [],
+      code: [tripCode, Validators.required],
+      name: ['', Validators.required],
+      length: ['', Validators.required],
+      start: ['', Validators.required],
+      resort: ['', Validators.required],
+      perPerson: ['', Validators.required],
+      image: ['', Validators.required],
+      description: ['', Validators.required]
+    })
+
+    this.tripService.getTrip(tripCode)
+      .then(data => {
+        console.log(data);
+        //Don't use editFrom.setValue() this will throw console error
+        this.editForm.patchValue(data[0]);
+      })
   }
 
+  onSubmit() {
+    this.submitted = true;
+    if (this.editForm.valid) {
+      this.tripService.updateTrip(this.editForm.value)
+        .then(data => {
+          console.log(data);
+          this.router.navigate(['']);
+        });
+    }
+  }
+
+  // get the form short name to access the form fields
+  get f() { return this.editForm.controls; }
 }

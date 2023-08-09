@@ -1,5 +1,6 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { Trip } from '../../../models/trip-interface';
+import { Router } from "@angular/router";
 
 @Component({
   selector: 'app-trip-card',
@@ -10,9 +11,18 @@ export class TripCardComponent implements OnInit {
 
   @Input('trip') trip: any;
 
-  constructor() { }
+  constructor(
+    private router: Router
+  ) { }
 
   ngOnInit(): void {
   }
 
+  // Stashing the trip code in the browser's local storage for the edit component to 
+  // retrieve later
+  private editTrip(trip: Trip): void {
+    localStorage.removeItem("tripCode");
+    localStorage.setItem("tripCode", trip.code);
+    this.router.navigate(['edit-trip']);
+  }
 }
