@@ -3,6 +3,16 @@ const router = express.Router();
 
 // Importing the functions we defined in the "trips.js" controller file
 const tripsController = require("../controllers/trips");
+// Importing the functions we defined in the "trips.js" controller file
+const authController = require("../controllers/authentication");
+
+router
+    .route('/login')
+    .post(authController.login);
+
+router
+    .route('/register')
+    .post(authController.register);
 
 router
     .route('/trips')
