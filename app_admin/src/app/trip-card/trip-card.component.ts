@@ -1,6 +1,7 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { Trip } from '../../../models/trip-interface';
 import { Router } from "@angular/router";
+import { AuthenticationService } from '../services/authentication.service';
 
 @Component({
   selector: 'app-trip-card',
@@ -12,10 +13,15 @@ export class TripCardComponent implements OnInit {
   @Input('trip') trip: any;
 
   constructor(
-    private router: Router
+    private router: Router,
+    private authenticationService: AuthenticationService
   ) { }
 
   ngOnInit(): void {
+  }
+
+  public isLoggedIn(): boolean {
+    return this.authenticationService.isLoggedIn();
   }
 
   // Stashing the trip code in the browser's local storage for the edit component to 
