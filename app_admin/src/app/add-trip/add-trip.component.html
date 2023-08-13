@@ -3,10 +3,8 @@
   <form [formGroup]="addForm" (ngSubmit)="onSubmit()">
     <div class="form-group">
       <label>Code:</label>
-      <input type="text" formControlName="code"
-        placeholder="Code" class="form-control"
-        [ngClass]="{ 'is-invalid': submitted && f.code.errors }"
-      >
+      <input type="text" formControlName="code" placeholder="Code" class="form-control"
+        [ngClass]="{ 'is-invalid': submitted && f.code.errors }">
       <div *ngIf="submitted && f.code.errors">
         <div *ngIf="f.code.errors.required">
           Trip Code is required
@@ -15,10 +13,8 @@
     </div>
     <div class="form-group">
       <label>Name:</label>
-      <input type="text" formControlName="name"
-        placeholder="Name" class="form-control"
-        [ngClass]="{ 'is-invalid': submitted && f.name.errors }"
-      >
+      <input type="text" formControlName="name" placeholder="Name" class="form-control"
+        [ngClass]="{ 'is-invalid': submitted && f.name.errors }">
       <div *ngIf="submitted && f.name.errors">
         <div *ngIf="f.name.errors.required">
           Name is required
@@ -27,10 +23,8 @@
     </div>
     <div class="form-group">
       <label>Trip Length:</label>
-      <input type="text" formControlName="length"
-        placeholder="Length" class="form-control"
-        [ngClass]="{ 'is-invalid': submitted && f.length.errors }"
-      >
+      <input type="text" formControlName="length" placeholder="Length" class="form-control"
+        [ngClass]="{ 'is-invalid': submitted && f.length.errors }">
       <div *ngIf="submitted && f.length.errors">
         <div *ngIf="f.length.errors.required">
           Trip length is required
@@ -39,10 +33,8 @@
     </div>
     <div class="form-group">
       <label>Start Date</label>
-      <input type="text" formControlName="date"
-        placeholder="Date" class="form-control"
-        [ngClass]="{ 'is-invalid': submitted && f.date.errors }"
-      >
+      <input type="text" formControlName="start" placeholder="Date" class="form-control"
+        [ngClass]="{ 'is-invalid': submitted && f.date.errors }">
       <div *ngIf="submitted && f.date.errors">
         <div *ngIf="f.date.errors.required">
           Trip start date is required
@@ -51,10 +43,8 @@
     </div>
     <div class="form-group">
       <label>Resort</label>
-      <input type="text" formControlName="resort"
-        placeholder="Resort" class="form-control"
-        [ngClass]="{ 'is-invalid': submitted && f.resort.errors }"
-      >
+      <input type="text" formControlName="resort" placeholder="Resort" class="form-control"
+        [ngClass]="{ 'is-invalid': submitted && f.resort.errors }">
       <div *ngIf="submitted && f.resort.errors">
         <div *ngIf="f.resort.errors.required">
           Resort is required
@@ -63,10 +53,8 @@
     </div>
     <div class="form-group">
       <label>Price per person</label>
-      <input type="text" formControlName="perPerson"
-        placeholder="Price per person" class="form-control"
-        [ngClass]="{ 'is-invalid': submitted && f.perPerson.errors }"
-      >
+      <input type="text" formControlName="perPerson" placeholder="Price per person" class="form-control"
+        [ngClass]="{ 'is-invalid': submitted && f.perPerson.errors }">
       <div *ngIf="submitted && f.perPerson.errors">
         <div *ngIf="f.perPerson.errors.required">
           Price per person is required
@@ -75,10 +63,8 @@
     </div>
     <div class="form-group">
       <label>Description</label>
-      <input type="text" formControlName="description"
-        placeholder="Description" class="form-control"
-        [ngClass]="{ 'is-invalid': submitted && f.description.errors }"
-      >
+      <input type="text" formControlName="description" placeholder="Description" class="form-control"
+        [ngClass]="{ 'is-invalid': submitted && f.description.errors }">
       <div *ngIf="submitted && f.description.errors">
         <div *ngIf="f.description.errors.required">
           Description is required
@@ -87,10 +73,8 @@
     </div>
     <div class="form-group">
       <label>Image</label>
-      <input type="test" formControlName="image"
-        placeholder="Image" class="form-control"
-        [ngClass]="{ 'is-invalid': submitted && f.image.errors }"
-      >
+      <input type="test" formControlName="image" placeholder="Image" class="form-control"
+        [ngClass]="{ 'is-invalid': submitted && f.image.errors }">
       <div *ngIf="submitted && f.image.errors">
         <div *ngIf="f.image.errors.required">
           Image is required

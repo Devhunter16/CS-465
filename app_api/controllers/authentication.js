@@ -1,8 +1,9 @@
 const passport = require('passport');
 const mongoose = require('mongoose');
-const User = mongoose.model('user');
+const User = mongoose.model('users');
 
 const register = (req, res) => {
+
     if (!req.body.name || !req.body.email || !req.body.password) {
         return res
             .status(400)
@@ -17,7 +18,7 @@ const register = (req, res) => {
         if (err) {
             res
                 .status(400)
-            .json(err);
+                .json(err);
         } else {
             const token = user.generateJwt();
             res
@@ -33,6 +34,7 @@ const login = (req, res) => {
             .status(400)
             .json({ "message": "All fields required" });
     }
+
     passport.authenticate('local', (err, user, info) => {
         if (err) {
             return res
@@ -49,6 +51,7 @@ const login = (req, res) => {
                 .status(401)
                 .json(info);
         }
+
     })(req, res);
 };
 
